@@ -1,0 +1,19 @@
+{
+  "name": "react-layer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/duanc/react-layer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/duanc/react-layer/issues"
+  },
+  "homepage": "https://github.com/duanc/react-layer#readme"
+}
