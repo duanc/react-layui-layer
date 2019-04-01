@@ -21,7 +21,14 @@
     "babel-preset-stage-2": "^6.18.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "coverage": "jest && codecov",
+    "start": "webpack-dev-server --inline --port 8081",
+    "docs-start": "webpack-dev-server --config ./scripts/docs.config --inline",
+    "clean": "rd /s/q lib && mkdir lib",
+    "lib": "npm run clean && babel src --out-dir lib --ignore \"**/*.test.js\"",
+    "docs": "webpack --config ./scripts/docs.config",
+    "docs-build": "webpack --config ./scripts/build.config"
   },
   "repository": {
     "type": "git",
