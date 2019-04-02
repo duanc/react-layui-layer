@@ -12,6 +12,7 @@ export default class Layer extends Component {
         this.state = {
             id: new Date().getTime(),
             children: props.children,
+            rsNum: -1
         };
         this.changWindow(props);
     }
@@ -26,7 +27,7 @@ export default class Layer extends Component {
         console.log(nextProps);
         this.setState({
             children: nextProps.children,
-        },() => {
+        }, () => {
             this.changWindow(nextProps);
         });
 
@@ -34,10 +35,10 @@ export default class Layer extends Component {
     }
 
     changWindow = (props) => {
-        let rs = -1;
-        if (props.visible){
+
+        if (props.visible) {
             const {id} = this.state;
-            rs = layer.open({
+            const rs = layer.open({
                 shade: props.shade || 0,
                 type: props.type || 1,
                 title: props.title,
@@ -45,10 +46,13 @@ export default class Layer extends Component {
                 area: [props.width || '800px', props.height || '500px'],
                 content: $('#' + id),
             });
+
+            this.setState({
+                rsNum:rs
+            })
         } else {
-            layer.close(rs)
+            layer.close(this.state.rsNum)
         }
-        console.log(rs)
     };
 
     // showWindow = () => {

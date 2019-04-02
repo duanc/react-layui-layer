@@ -11131,7 +11131,8 @@ var Layer = function (_Component) {
         console.log(props);
         _this.state = {
             id: new Date().getTime(),
-            children: props.children
+            children: props.children,
+            rsNum: -1
         };
         _this.changWindow(props);
         return _this;
@@ -11195,11 +11196,11 @@ var _initialiseProps = function _initialiseProps() {
     var _this3 = this;
 
     this.changWindow = function (props) {
-        var rs = -1;
+
         if (props.visible) {
             var id = _this3.state.id;
 
-            rs = _layer2.default.open({
+            var rs = _layer2.default.open({
                 shade: props.shade || 0,
                 type: props.type || 1,
                 title: props.title,
@@ -11207,10 +11208,13 @@ var _initialiseProps = function _initialiseProps() {
                 area: [props.width || '800px', props.height || '500px'],
                 content: $('#' + id)
             });
+
+            _this3.setState({
+                rsNum: rs
+            });
         } else {
-            _layer2.default.close(rs);
+            _layer2.default.close(_this3.state.rsNum);
         }
-        console.log(rs);
     };
 };
 
