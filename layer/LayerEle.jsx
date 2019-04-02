@@ -17,7 +17,7 @@ export default class Layer extends Component {
             area: ['800px', '500px'],
             content: 'http://layer.layui.com/test/welcome.html',
             end: function(){
-                layer.tips('Hi', '#about', {tips: 1})
+                // layer.tips('Hi', '#about', {tips: 1})
             }
         });
     };
@@ -25,8 +25,7 @@ export default class Layer extends Component {
     render() {
         return (
             <div style={{color: '#0ff'}}>
-                3333331213123123123
-                <button onClick={this.showWindow}>dsadasdasd</button>
+                <button onClick={this.showWindow}>打开示例</button>
             </div>
         );
     }

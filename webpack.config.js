@@ -35,7 +35,7 @@ function getConfig(minified) {
                 loader: 'style-loader!css-loader'
             },{
                 test: /\.(png|jpg|gif)$/,
-                loader: 'url-loader?limit=8192'
+                loader: 'url-loader'
             } ],
         },
     };
