@@ -11152,6 +11152,11 @@ var Layer = function (_Component) {
             console.log(_layer2.default);
         }
     }, {
+        key: 'componentWillReceiveProps',
+        value: function componentWillReceiveProps(nextProps) {
+            console.log(nextProps);
+        }
+    }, {
         key: 'render',
         value: function render() {
             return _react2.default.createElement(

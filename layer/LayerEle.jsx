@@ -9,6 +9,11 @@ export default class Layer extends Component {
         console.log(layer)
     }
 
+
+    componentWillReceiveProps(nextProps){
+        console.log(nextProps)
+    }
+
     showWindow = () => {
         layer.open({
             type: 2,
