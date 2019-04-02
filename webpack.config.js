@@ -2,7 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-    entry: path.resolve(__dirname, 'layer/LayerEle.js'),
+    entry: path.resolve(__dirname, 'layer/LayerEle.jsx'),
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js',
@@ -11,9 +11,17 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.jsx']
     },
+    externals: {
+        react: {
+            root: 'React',
+            commonjs2: 'react',
+            commonjs: 'react',
+            amd: 'react'
+        }
+    },
     module: {
         loaders: [{
-            test: /\.js?$/,
+            test: /\.jsx?$/,
             exclude: /node_modules/,
             loader: 'babel-loader',
         },{
