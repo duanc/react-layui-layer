@@ -1,2 +1,2 @@
-import Layer from './dist/bundle';
+import Layer from './dist/layer';
 export default Layer

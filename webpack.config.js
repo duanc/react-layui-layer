@@ -1,55 +1,52 @@
 var path = require('path');
 var webpack = require('webpack');
 
-module.exports = {
-    entry: path.resolve(__dirname, 'layer/LayerEle.jsx'),
-    output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js',
-        libraryTarget: 'commonjs2'
-    },
-    resolve: {
-        extensions: ['.js', '.jsx']
-    },
-    externals: {
-        react: {
-            root: 'React',
-            commonjs2: 'react',
-            commonjs: 'react',
-            amd: 'react'
-        }
-    },
-    module: {
-        loaders: [{
-            test: /\.jsx?$/,
-            exclude: /node_modules/,
-            loader: 'babel-loader',
-        },{
-            test: /\.css$/,
-            loader: 'style-loader!css-loader'
-        }]
-    },
-    //devtool: "cheap-eval-source-map",
-    /*	devServer: {
-            historyApiFallback: true,
-            hot: true,
-            inline: true,
-            //progress: true,
-        },*/
-    /*	plugins: [
-            new webpack.DefinePlugin({
-                'process.env.NODE.ENV':"development"
-            }),
-            new webpack.HotModuleReplacementPlugin()
-        ]*/
-    plugins: [
-        new webpack.DefinePlugin({
-            'process.env': {
-                NODE_ENV: JSON.stringify('production')
-            }
-        }),
-        new webpack.optimize.UglifyJsPlugin()
-    ]
-};
+function getConfig(minified) {
+    const config = {
+        entry: './layer/LayerEle.jsx',
+        output: {
+            path: path.resolve('dist'),
+            library: 'layer',
+            libraryTarget: 'umd',
+            filename: 'layer.js',
+        },
+        target: 'web',
+        externals: {
+            react: {
+                root: 'React',
+                commonjs: 'react',
+                commonjs2: 'react',
+                amd: 'react',
+            },
+            'prop-types': {
+                root: 'PropTypes',
+                commonjs: 'prop-types',
+                commonjs2: 'prop-types',
+                amd: 'prop-types',
+            },
+        },
+        module: {
+            loaders: [{
+                test: /\.(js|jsx)$/,
+                exclude: /node_modules/,
+                loader: 'babel-loader',
+            }],
+        },
+    };
 
-			
+    if (minified) {
+        config.plugins = [
+            new webpack.optimize.ModuleConcatenationPlugin(),
+            new webpack.optimize.UglifyJsPlugin(),
+            new webpack.DefinePlugin({
+                'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+            }),
+        ];
+    }
+
+    return config;
+}
+
+module.exports = [
+    getConfig(),
+];

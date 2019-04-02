@@ -2,10 +2,7 @@
   "presets": [
     "react",
     "es2015",
-    "stage-1"
-  ],
-  "plugins": [
-    "transform-object-assign"
+    "stage-0"
   ],
   "sourceMaps": true
 }

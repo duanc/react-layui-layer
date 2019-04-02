@@ -1,10 +1,5 @@
 import React, { Component } from 'react';
-//
-// import ArchiveFuzzyQuery from './ArchiveFuzzyQuery';
 
-/**
- * 档案查询页面
- */
  class Layer extends Component {
 
 
