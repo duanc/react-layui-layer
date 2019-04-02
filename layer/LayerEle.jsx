@@ -36,6 +36,7 @@ export default class Layer extends Component {
 
     changWindow = (props) => {
 
+        console.log(this.state.rsNum);
         if (props.visible) {
             const {id} = this.state;
             const rs = layer.open({

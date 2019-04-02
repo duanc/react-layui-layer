@@ -11197,6 +11197,7 @@ var _initialiseProps = function _initialiseProps() {
 
     this.changWindow = function (props) {
 
+        console.log(_this3.state.rsNum);
         if (props.visible) {
             var id = _this3.state.id;
 
