@@ -11157,7 +11157,11 @@ var Layer = function (_Component) {
         key: 'componentWillReceiveProps',
         value: function componentWillReceiveProps(nextProps) {
             console.log(nextProps);
+            this.setState({
+                children: nextProps.children.props.children
+            });
             _layer2.default.open({
+                shade: 0,
                 type: 1,
                 title: '欢迎页',
                 maxmin: true,

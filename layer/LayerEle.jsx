@@ -23,7 +23,11 @@ export default class Layer extends Component {
 
     componentWillReceiveProps(nextProps){
         console.log(nextProps);
+        this.setState({
+            children:nextProps.children.props.children,
+        });
         layer.open({
+            shade:0,
             type: 1,
             title: '欢迎页',
             maxmin: true,
