@@ -11125,22 +11125,10 @@ var Layer = function (_Component) {
 
         var _this = _possibleConstructorReturn(this, (Layer.__proto__ || Object.getPrototypeOf(Layer)).call(this, props));
 
-        _this.showWindow = function () {
-            _layer2.default.open({
-                type: 2,
-                title: '欢迎页',
-                maxmin: true,
-                area: ['800px', '500px'],
-                content: 'http://layer.layui.com/test/welcome.html',
-                end: function end() {
-                    // layer.tips('Hi', '#about', {tips: 1})
-                }
-            });
-        };
-
         console.log('初始化构造器');
         console.log(props);
         _this.state = {
+            id: Math.random(),
             children: props.children,
             isShow: false
         };
@@ -11160,26 +11148,46 @@ var Layer = function (_Component) {
             this.setState({
                 children: nextProps.children
             });
-            _layer2.default.open({
+            var id = this.state.id;
+
+            var rs = _layer2.default.open({
                 shade: 0,
                 type: 1,
                 title: '欢迎页',
                 maxmin: true,
                 area: ['800px', '500px'],
-                content: $('#test')
+                content: $('#' + id)
             });
+
+            console.log(rs);
         }
+
+        // showWindow = () => {
+        //     layer.open({
+        //         type: 2,
+        //         title: '欢迎页',
+        //         maxmin: true,
+        //         area: ['800px', '500px'],
+        //         content: 'http://layer.layui.com/test/welcome.html',
+        //         end: function () {
+        //             // layer.tips('Hi', '#about', {tips: 1})
+        //         }
+        //     });
+        // };
+
     }, {
         key: 'render',
         value: function render() {
             // const {children} = this.prop;
-            var children = this.state.children;
+            var _state = this.state,
+                children = _state.children,
+                id = _state.id;
             // console.log(children1);
 
             console.log(children);
             return _react2.default.createElement(
                 'div',
-                { id: 'test', style: { 'display': 'none' } },
+                { id: id, style: { 'display': 'none' } },
                 children
             );
         }
