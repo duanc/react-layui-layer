@@ -11125,24 +11125,7 @@ var Layer = function (_Component) {
 
         var _this = _possibleConstructorReturn(this, (Layer.__proto__ || Object.getPrototypeOf(Layer)).call(this, props));
 
-        _this.changWindow = function () {
-            var rs = -1;
-            if (visible) {
-                var id = _this.state.id;
-
-                rs = _layer2.default.open({
-                    shade: nextProps.shade || 0,
-                    type: nextProps.type || 1,
-                    title: nextProps.title,
-                    maxmin: true,
-                    area: [nextProps.width || '800px', nextProps.height || '500px'],
-                    content: $('#' + id)
-                });
-            } else {
-                _layer2.default.close(rs);
-            }
-            console.log(rs);
-        };
+        _initialiseProps.call(_this);
 
         console.log('初始化构造器');
         console.log(props);
@@ -11207,6 +11190,29 @@ var Layer = function (_Component) {
 
     return Layer;
 }(_react.Component);
+
+var _initialiseProps = function _initialiseProps() {
+    var _this3 = this;
+
+    this.changWindow = function (props) {
+        var rs = -1;
+        if (props.visible) {
+            var id = _this3.state.id;
+
+            rs = _layer2.default.open({
+                shade: props.shade || 0,
+                type: props.type || 1,
+                title: props.title,
+                maxmin: true,
+                area: [props.width || '800px', props.height || '500px'],
+                content: $('#' + id)
+            });
+        } else {
+            _layer2.default.close(rs);
+        }
+        console.log(rs);
+    };
+};
 
 exports.default = Layer;
 

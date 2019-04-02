@@ -33,16 +33,16 @@ export default class Layer extends Component {
 
     }
 
-    changWindow = () => {
+    changWindow = (props) => {
         let rs = -1;
-        if (visible){
+        if (props.visible){
             const {id} = this.state;
             rs = layer.open({
-                shade: nextProps.shade || 0,
-                type: nextProps.type || 1,
-                title: nextProps.title,
+                shade: props.shade || 0,
+                type: props.type || 1,
+                title: props.title,
                 maxmin: true,
-                area: [nextProps.width || '800px', nextProps.height || '500px'],
+                area: [props.width || '800px', props.height || '500px'],
                 content: $('#' + id),
             });
         } else {
