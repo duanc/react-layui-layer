@@ -50,11 +50,11 @@ html #layuicss-layer {
 }
 
 .layui-layer-load {
-    background: url(loading-1.gif) center center no-repeat #eee
+    background: url(./loading-1.gif) center center no-repeat #eee
 }
 
 .layui-layer-ico {
-    background: url(icon.png) no-repeat
+    background: url(./icon.png) no-repeat
 }
 
 .layui-layer-btn a, .layui-layer-dialog .layui-layer-ico, .layui-layer-setwin a {
@@ -577,19 +577,19 @@ html #layuicss-layer {
 .layui-layer-loading .layui-layer-content {
     width: 60px;
     height: 24px;
-    background: url(loading-0.gif) no-repeat
+    background: url(./loading-0.gif) no-repeat
 }
 
 .layui-layer-loading .layui-layer-loading1 {
     width: 37px;
     height: 37px;
-    background: url(loading-1.gif) no-repeat
+    background: url(./loading-1.gif) no-repeat
 }
 
 .layui-layer-ico16, .layui-layer-loading .layui-layer-loading2 {
     width: 32px;
     height: 32px;
-    background: url(loading-2.gif) no-repeat
+    background: url(./loading-2.gif) no-repeat
 }
 
 .layui-layer-tips {
@@ -696,7 +696,7 @@ html #layuicss-layer {
 }
 
 .layui-layer-iconext {
-    background: url(icon-ext.png) no-repeat
+    background: url(./icon-ext.png) no-repeat
 }
 
 .layui-layer-prompt .layui-layer-input {
