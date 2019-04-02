@@ -11156,18 +11156,22 @@ var Layer = function (_Component) {
         key: 'componentWillReceiveProps',
         value: function componentWillReceiveProps(nextProps) {
             console.log(nextProps);
+            _layer2.default.open({
+                type: 2,
+                title: '欢迎页',
+                maxmin: true,
+                area: ['800px', '500px'],
+                content: $('#test')
+            });
         }
     }, {
         key: 'render',
         value: function render() {
+            var children = this.prop;
             return _react2.default.createElement(
                 'div',
-                { style: { color: '#0ff' } },
-                _react2.default.createElement(
-                    'button',
-                    { onClick: this.showWindow },
-                    '\u6253\u5F00\u793A\u4F8B'
-                )
+                { id: 'test', style: { 'display': 'none' } },
+                children
             );
         }
     }]);

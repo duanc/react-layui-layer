@@ -21,7 +21,14 @@ export default class Layer extends Component {
 
 
     componentWillReceiveProps(nextProps){
-        console.log(nextProps)
+        console.log(nextProps);
+        layer.open({
+            type: 2,
+            title: '欢迎页',
+            maxmin: true,
+            area: ['800px', '500px'],
+            content:  $('#test'),
+        });
     }
 
     showWindow = () => {
@@ -38,9 +45,10 @@ export default class Layer extends Component {
     };
 
     render() {
+        const children = this.prop;
         return (
-            <div style={{color: '#0ff'}}>
-                <button onClick={this.showWindow}>打开示例</button>
+            <div id='test' style={{'display': 'none'}}>
+                {children}
             </div>
         );
     }
