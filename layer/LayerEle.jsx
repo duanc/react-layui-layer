@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
- class Layer extends Component {
-
+export default class Layer extends Component {
 
     componentDidMount() {
         console.log('執行了Layer')
@@ -15,4 +14,3 @@ import React, { Component } from 'react';
     );
   }
 }
-export default Layer
