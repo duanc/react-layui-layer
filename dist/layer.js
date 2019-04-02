@@ -11168,10 +11168,11 @@ var Layer = function (_Component) {
         key: 'render',
         value: function render() {
             var children = this.prop;
+            console.log(children);
             return _react2.default.createElement(
                 'div',
                 { id: 'test', style: { 'display': 'none' } },
-                children
+                children.prop.children
             );
         }
     }]);

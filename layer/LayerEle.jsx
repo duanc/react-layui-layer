@@ -46,9 +46,10 @@ export default class Layer extends Component {
 
     render() {
         const children = this.prop;
+        console.log(children);
         return (
             <div id='test' style={{'display': 'none'}}>
-                {children}
+                {children.prop.children}
             </div>
         );
     }
