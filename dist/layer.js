@@ -111,6 +111,7 @@ var Layer = function (_Component) {
     key: 'componentDidMount',
     value: function componentDidMount() {
       console.log('執行了Layer');
+      console.log(_react2.default);
     }
   }, {
     key: 'render',
@@ -118,7 +119,12 @@ var Layer = function (_Component) {
       return _react2.default.createElement(
         'div',
         { style: { color: '#0ff' } },
-        '3333331'
+        '3333331213123123123',
+        _react2.default.createElement(
+          'button',
+          null,
+          'dsadasdasd'
+        )
       );
     }
   }]);
