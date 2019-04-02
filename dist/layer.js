@@ -11133,7 +11133,7 @@ var Layer = function (_Component) {
 
         return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Layer.__proto__ || Object.getPrototypeOf(Layer)).call.apply(_ref, [this].concat(args))), _this), _this.showWindow = function () {
             _layer2.default.open({
-                type: 1,
+                type: 2,
                 title: '欢迎页',
                 maxmin: true,
                 area: ['800px', '500px'],
