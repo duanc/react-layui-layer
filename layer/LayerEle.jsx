@@ -49,7 +49,7 @@ export default class Layer extends Component {
         console.log(children);
         return (
             <div id='test' style={{'display': 'none'}}>
-                {children.prop.children}
+                {children}
             </div>
         );
     }

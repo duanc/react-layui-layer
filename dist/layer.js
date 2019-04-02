@@ -11172,7 +11172,7 @@ var Layer = function (_Component) {
             return _react2.default.createElement(
                 'div',
                 { id: 'test', style: { 'display': 'none' } },
-                children.prop.children
+                children
             );
         }
     }]);
