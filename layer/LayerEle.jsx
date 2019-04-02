@@ -11,7 +11,7 @@ export default class Layer extends Component {
 
     showWindow = () => {
         layer.open({
-            type: 2,
+            type: 1,
             title: '欢迎页',
             maxmin: true,
             area: ['800px', '500px'],
