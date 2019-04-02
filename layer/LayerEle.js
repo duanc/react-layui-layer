@@ -9,7 +9,7 @@ export default class Layer extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{color:'#0ff'}}>
      3333331
       </div>
     );
