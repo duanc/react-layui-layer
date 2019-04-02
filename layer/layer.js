@@ -1,4 +1,5 @@
 import jQuery from 'jquery';
+import css from './theme/default/layer.css';
 window.jQuery = jQuery;
 window.jquery = jQuery;
 window.$ = jQuery;
