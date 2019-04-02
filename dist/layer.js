@@ -11141,6 +11141,7 @@ var Layer = function (_Component) {
         console.log('初始化构造器');
         console.log(props);
         _this.state = {
+            children: props.children.props.children,
             isShow: false
         };
         return _this;
@@ -11167,7 +11168,10 @@ var Layer = function (_Component) {
     }, {
         key: 'render',
         value: function render() {
-            var children = this.prop;
+            var children1 = this.prop.children1;
+            var children = this.children.children;
+
+            console.log(children1);
             console.log(children);
             return _react2.default.createElement(
                 'div',

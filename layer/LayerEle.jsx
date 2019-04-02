@@ -10,6 +10,7 @@ export default class Layer extends Component {
         console.log('初始化构造器');
         console.log(props);
         this.state = {
+            children:props.children.props.children,
             isShow: false
         };
     }
@@ -45,7 +46,9 @@ export default class Layer extends Component {
     };
 
     render() {
-        const children = this.prop;
+        const {children1} = this.prop;
+        const {children} = this.children;
+        console.log(children1);
         console.log(children);
         return (
             <div id='test' style={{'display': 'none'}}>
