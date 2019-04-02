@@ -11131,9 +11131,9 @@ var Layer = function (_Component) {
         console.log(props);
         _this.state = {
             id: new Date().getTime(),
-            children: props.children,
-            rsNum: -1
+            children: props.children
         };
+        _this.rsNum = -1;
         _this.changWindow(props);
         return _this;
     }
@@ -11196,8 +11196,7 @@ var _initialiseProps = function _initialiseProps() {
     var _this3 = this;
 
     this.changWindow = function (props) {
-
-        console.log(_this3.state.rsNum);
+        console.log(_this3.rsNum);
         if (props.visible) {
             var id = _this3.state.id;
 
@@ -11210,12 +11209,12 @@ var _initialiseProps = function _initialiseProps() {
                 content: $('#' + id)
             });
 
-            _this3.setState({
-                rsNum: rs
-            });
+            _this3.rsNum = id;
         } else {
-            _layer2.default.close(_this3.state.rsNum);
+            _layer2.default.close(_this3.rsNum);
         }
+
+        console.log(_this3.rsNum);
     };
 };
 
