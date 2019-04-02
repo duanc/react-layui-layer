@@ -11134,6 +11134,7 @@ var Layer = function (_Component) {
             children: props.children
         };
         _this.rsNum = -1;
+        _this.isShow = false;
         _this.changWindow(props);
         return _this;
     }
@@ -11197,7 +11198,7 @@ var _initialiseProps = function _initialiseProps() {
 
     this.changWindow = function (props) {
         console.log(_this3.rsNum);
-        if (props.visible) {
+        if (props.visible && !_this3.isShow) {
             var id = _this3.state.id;
 
             var rs = _layer2.default.open({
@@ -11210,8 +11211,10 @@ var _initialiseProps = function _initialiseProps() {
             });
 
             _this3.rsNum = id;
+            _this3.isShow = true;
         } else {
             _layer2.default.close(_this3.rsNum);
+            _this3.isShow = false;
         }
 
         console.log(_this3.rsNum);

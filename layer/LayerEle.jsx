@@ -14,6 +14,7 @@ export default class Layer extends Component {
             children: props.children,
         };
         this.rsNum = -1;
+        this.isShow = false;
         this.changWindow(props);
     }
 
@@ -36,7 +37,7 @@ export default class Layer extends Component {
 
     changWindow = (props) => {
         console.log(this.rsNum);
-        if (props.visible) {
+        if (props.visible && !this.isShow) {
             const {id} = this.state;
             const rs = layer.open({
                 shade: props.shade || 0,
@@ -48,8 +49,10 @@ export default class Layer extends Component {
             });
 
             this.rsNum = id;
+            this.isShow = true;
         } else {
-            layer.close(  this.rsNum)
+            layer.close(  this.rsNum);
+            this.isShow = false
         }
 
         console.log(this.rsNum);
