@@ -81,7 +81,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -99,37 +99,56 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var Layer = function (_Component) {
-  _inherits(Layer, _Component);
+    _inherits(Layer, _Component);
 
-  function Layer() {
-    _classCallCheck(this, Layer);
+    function Layer() {
+        var _ref;
 
-    return _possibleConstructorReturn(this, (Layer.__proto__ || Object.getPrototypeOf(Layer)).apply(this, arguments));
-  }
+        var _temp, _this, _ret;
 
-  _createClass(Layer, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      console.log('執行了Layer');
-      console.log(_react2.default);
+        _classCallCheck(this, Layer);
+
+        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+        }
+
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Layer.__proto__ || Object.getPrototypeOf(Layer)).call.apply(_ref, [this].concat(args))), _this), _this.showWindow = function () {
+            _react2.default.open({
+                type: 2,
+                title: '欢迎页',
+                maxmin: true,
+                area: ['800px', '500px'],
+                content: 'http://layer.layui.com/test/welcome.html',
+                end: function end() {
+                    _react2.default.tips('Hi', '#about', { tips: 1 });
+                }
+            });
+        }, _temp), _possibleConstructorReturn(_this, _ret);
     }
-  }, {
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        'div',
-        { style: { color: '#0ff' } },
-        '3333331213123123123',
-        _react2.default.createElement(
-          'button',
-          null,
-          'dsadasdasd'
-        )
-      );
-    }
-  }]);
 
-  return Layer;
+    _createClass(Layer, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            console.log('執行了Layer');
+            console.log(_react2.default);
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                'div',
+                { style: { color: '#0ff' } },
+                '3333331213123123123',
+                _react2.default.createElement(
+                    'button',
+                    { onClick: this.showWindow },
+                    'dsadasdasd'
+                )
+            );
+        }
+    }]);
+
+    return Layer;
 }(_react.Component);
 
 exports.default = Layer;
