@@ -47,8 +47,7 @@ export default class Layer extends Component {
                 area: [props.width || '800px', props.height || '500px'],
                 content: $('#' + id),
             });
-
-            this.rsNum = id;
+            this.rsNum = rs;
             this.isShow = true;
         } else {
             layer.close(  this.rsNum);

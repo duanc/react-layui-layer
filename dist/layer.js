@@ -11209,8 +11209,7 @@ var _initialiseProps = function _initialiseProps() {
                 area: [props.width || '800px', props.height || '500px'],
                 content: $('#' + id)
             });
-
-            _this3.rsNum = id;
+            _this3.rsNum = rs;
             _this3.isShow = true;
         } else {
             _layer2.default.close(_this3.rsNum);
