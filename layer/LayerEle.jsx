@@ -24,7 +24,7 @@ export default class Layer extends Component {
     componentWillReceiveProps(nextProps){
         console.log(nextProps);
         layer.open({
-            type: 2,
+            type: 1,
             title: '欢迎页',
             maxmin: true,
             area: ['800px', '500px'],

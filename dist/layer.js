@@ -11158,7 +11158,7 @@ var Layer = function (_Component) {
         value: function componentWillReceiveProps(nextProps) {
             console.log(nextProps);
             _layer2.default.open({
-                type: 2,
+                type: 1,
                 title: '欢迎页',
                 maxmin: true,
                 area: ['800px', '500px'],
