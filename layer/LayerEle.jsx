@@ -49,7 +49,9 @@ export default class Layer extends Component {
             });
             this.rsNum = rs;
             this.isShow = true;
-        } else {
+        }
+
+        if (!props.visible && this.isShow) {
             layer.close(  this.rsNum);
             this.isShow = false
         }

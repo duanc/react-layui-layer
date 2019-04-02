@@ -11211,7 +11211,9 @@ var _initialiseProps = function _initialiseProps() {
             });
             _this3.rsNum = rs;
             _this3.isShow = true;
-        } else {
+        }
+
+        if (!props.visible && _this3.isShow) {
             _layer2.default.close(_this3.rsNum);
             _this3.isShow = false;
         }
