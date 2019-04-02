@@ -10,7 +10,7 @@ export default class Layer extends Component {
         console.log('初始化构造器');
         console.log(props);
         this.state = {
-            children:props.children.props.children,
+            children:props.children,
             isShow: false
         };
     }
@@ -24,7 +24,7 @@ export default class Layer extends Component {
     componentWillReceiveProps(nextProps){
         console.log(nextProps);
         this.setState({
-            children:nextProps.children.props.children,
+            children:nextProps.children,
         });
         layer.open({
             shade:0,

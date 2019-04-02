@@ -11141,7 +11141,7 @@ var Layer = function (_Component) {
         console.log('初始化构造器');
         console.log(props);
         _this.state = {
-            children: props.children.props.children,
+            children: props.children,
             isShow: false
         };
         return _this;
@@ -11158,7 +11158,7 @@ var Layer = function (_Component) {
         value: function componentWillReceiveProps(nextProps) {
             console.log(nextProps);
             this.setState({
-                children: nextProps.children.props.children
+                children: nextProps.children
             });
             _layer2.default.open({
                 shade: 0,
