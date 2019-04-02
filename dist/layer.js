@@ -11120,18 +11120,12 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Layer = function (_Component) {
     _inherits(Layer, _Component);
 
-    function Layer() {
-        var _ref;
-
-        var _temp, _this, _ret;
-
+    function Layer(props) {
         _classCallCheck(this, Layer);
 
-        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-            args[_key] = arguments[_key];
-        }
+        var _this = _possibleConstructorReturn(this, (Layer.__proto__ || Object.getPrototypeOf(Layer)).call(this, props));
 
-        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Layer.__proto__ || Object.getPrototypeOf(Layer)).call.apply(_ref, [this].concat(args))), _this), _this.showWindow = function () {
+        _this.showWindow = function () {
             _layer2.default.open({
                 type: 2,
                 title: '欢迎页',
@@ -11142,7 +11136,14 @@ var Layer = function (_Component) {
                     // layer.tips('Hi', '#about', {tips: 1})
                 }
             });
-        }, _temp), _possibleConstructorReturn(_this, _ret);
+        };
+
+        console.log('初始化构造器');
+        console.log(props);
+        _this.state = {
+            isShow: false
+        };
+        return _this;
     }
 
     _createClass(Layer, [{

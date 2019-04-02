@@ -4,6 +4,16 @@ import layer from './layer';
 
 export default class Layer extends Component {
 
+
+    constructor(props) {
+        super(props);
+        console.log('初始化构造器');
+        console.log(props);
+        this.state = {
+            isShow: false
+        };
+    }
+
     componentDidMount() {
         console.log('執行了Layer');
         console.log(layer)
