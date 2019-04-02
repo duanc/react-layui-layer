@@ -46,6 +46,10 @@ export default class Layer extends Component {
                 maxmin: true,
                 area: [props.width || '800px', props.height || '500px'],
                 content: $('#' + id),
+                cancel: (index)=>{
+                    layer.close(index);
+                    this.isShow = false
+                }
             });
             this.rsNum = rs;
             this.isShow = true;

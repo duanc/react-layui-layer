@@ -11207,7 +11207,11 @@ var _initialiseProps = function _initialiseProps() {
                 title: props.title,
                 maxmin: true,
                 area: [props.width || '800px', props.height || '500px'],
-                content: $('#' + id)
+                content: $('#' + id),
+                cancel: function cancel(index) {
+                    _layer2.default.close(index);
+                    _this3.isShow = false;
+                }
             });
             _this3.rsNum = rs;
             _this3.isShow = true;
