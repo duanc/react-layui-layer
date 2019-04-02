@@ -11128,7 +11128,7 @@ var Layer = function (_Component) {
         console.log('初始化构造器');
         console.log(props);
         _this.state = {
-            id: Math.random(),
+            id: new Date().getTime(),
             children: props.children,
             isShow: false
         };

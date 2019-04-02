@@ -10,7 +10,7 @@ export default class Layer extends Component {
         console.log('初始化构造器');
         console.log(props);
         this.state = {
-            id: Math.random(),
+            id:new Date().getTime(),
             children: props.children,
             isShow: false
         };
