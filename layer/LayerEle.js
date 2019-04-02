@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 /**
  * 档案查询页面
  */
-export default class Layer extends Component {
+ class Layer extends Component {
 
   render() {
     return (
@@ -15,3 +15,4 @@ export default class Layer extends Component {
     );
   }
 }
+export default Layer

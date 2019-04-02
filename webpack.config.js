@@ -1,5 +1,5 @@
 var path = require('path');
-var webpack = require('webpack')
+var webpack = require('webpack');
 
 module.exports = {
     entry: path.resolve(__dirname, 'layer/LayerEle.js'),
@@ -50,6 +50,6 @@ module.exports = {
         }),
         new webpack.optimize.UglifyJsPlugin()
     ]
-}	
+};
 
 			
