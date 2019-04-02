@@ -1,3 +1,8 @@
+import jQuery from 'jquery';
+window.jQuery = jQuery;
+window.jquery = jQuery;
+window.$ = jQuery;
+
 /*! layer-v3.1.1 Web弹层组件 MIT License  http://layer.layui.com/  By 贤心 */
 ;!function (e, t) {
     "use strict";
