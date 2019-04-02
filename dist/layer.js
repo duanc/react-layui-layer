@@ -11168,10 +11168,10 @@ var Layer = function (_Component) {
     }, {
         key: 'render',
         value: function render() {
-            var children1 = this.prop.children1;
+            // const {children} = this.prop;
             var children = this.children.children;
+            // console.log(children1);
 
-            console.log(children1);
             console.log(children);
             return _react2.default.createElement(
                 'div',

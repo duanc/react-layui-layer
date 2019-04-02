@@ -46,9 +46,9 @@ export default class Layer extends Component {
     };
 
     render() {
-        const {children1} = this.prop;
+        // const {children} = this.prop;
         const {children} = this.children;
-        console.log(children1);
+        // console.log(children1);
         console.log(children);
         return (
             <div id='test' style={{'display': 'none'}}>
