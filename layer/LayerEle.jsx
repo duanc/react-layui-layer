@@ -47,7 +47,7 @@ export default class Layer extends Component {
 
     render() {
         // const {children} = this.prop;
-        const {children} = this.children;
+        const {children} = this.state;
         // console.log(children1);
         console.log(children);
         return (

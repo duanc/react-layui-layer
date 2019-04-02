@@ -11169,7 +11169,7 @@ var Layer = function (_Component) {
         key: 'render',
         value: function render() {
             // const {children} = this.prop;
-            var children = this.children.children;
+            var children = this.state.children;
             // console.log(children1);
 
             console.log(children);
