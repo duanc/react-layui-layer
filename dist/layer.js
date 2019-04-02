@@ -11125,13 +11125,32 @@ var Layer = function (_Component) {
 
         var _this = _possibleConstructorReturn(this, (Layer.__proto__ || Object.getPrototypeOf(Layer)).call(this, props));
 
+        _this.changWindow = function () {
+            var rs = -1;
+            if (visible) {
+                var id = _this.state.id;
+
+                rs = _layer2.default.open({
+                    shade: nextProps.shade || 0,
+                    type: nextProps.type || 1,
+                    title: nextProps.title,
+                    maxmin: true,
+                    area: [nextProps.width || '800px', nextProps.height || '500px'],
+                    content: $('#' + id)
+                });
+            } else {
+                _layer2.default.close(rs);
+            }
+            console.log(rs);
+        };
+
         console.log('初始化构造器');
         console.log(props);
         _this.state = {
             id: new Date().getTime(),
-            children: props.children,
-            isShow: false
+            children: props.children
         };
+        _this.changWindow(props);
         return _this;
     }
 
@@ -11144,23 +11163,18 @@ var Layer = function (_Component) {
     }, {
         key: 'componentWillReceiveProps',
         value: function componentWillReceiveProps(nextProps) {
+            var _this2 = this;
+
             console.log(nextProps);
             this.setState({
                 children: nextProps.children
+            }, function () {
+                _this2.changWindow(nextProps);
             });
-            var id = this.state.id;
-
-            var rs = _layer2.default.open({
-                shade: 0,
-                type: 1,
-                title: '欢迎页',
-                maxmin: true,
-                area: ['800px', '500px'],
-                content: $('#' + id)
-            });
-
-            console.log(rs);
         }
+    }, {
+        key: 'render',
+
 
         // showWindow = () => {
         //     layer.open({
@@ -11175,8 +11189,6 @@ var Layer = function (_Component) {
         //     });
         // };
 
-    }, {
-        key: 'render',
         value: function render() {
             // const {children} = this.prop;
             var _state = this.state,

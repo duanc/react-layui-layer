@@ -10,10 +10,10 @@ export default class Layer extends Component {
         console.log('初始化构造器');
         console.log(props);
         this.state = {
-            id:new Date().getTime(),
+            id: new Date().getTime(),
             children: props.children,
-            isShow: false
         };
+        this.changWindow(props);
     }
 
     componentDidMount() {
@@ -26,19 +26,30 @@ export default class Layer extends Component {
         console.log(nextProps);
         this.setState({
             children: nextProps.children,
-        });
-        const {id} = this.state;
-        const rs = layer.open({
-            shade: 0,
-            type: 1,
-            title: '欢迎页',
-            maxmin: true,
-            area: ['800px', '500px'],
-            content: $('#' + id),
+        },() => {
+            this.changWindow(nextProps);
         });
 
-        console.log(rs)
+
     }
+
+    changWindow = () => {
+        let rs = -1;
+        if (visible){
+            const {id} = this.state;
+            rs = layer.open({
+                shade: nextProps.shade || 0,
+                type: nextProps.type || 1,
+                title: nextProps.title,
+                maxmin: true,
+                area: [nextProps.width || '800px', nextProps.height || '500px'],
+                content: $('#' + id),
+            });
+        } else {
+            layer.close(rs)
+        }
+        console.log(rs)
+    };
 
     // showWindow = () => {
     //     layer.open({
@@ -55,7 +66,7 @@ export default class Layer extends Component {
 
     render() {
         // const {children} = this.prop;
-        const {children,id} = this.state;
+        const {children, id} = this.state;
         // console.log(children1);
         console.log(children);
         return (
