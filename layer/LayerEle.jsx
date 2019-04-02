@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import layer from 'react';
+
+import layer from './layer';
 
 export default class Layer extends Component {
 
