@@ -24,7 +24,7 @@ import Layer from 'react-layer';
 | --------   | -----  | :----:  |:----:  |
 | visible | 是否显示窗体 | Boolean | false |
 | shade  | 遮罩 即弹层外区域。例如0.3为透明度0.3的黑色背景('#000')  |   number    |  0   |
-| type | 基本层类型 可传入的值有：0（信息框，默认）1（页面层）2（iframe层）3（加载层）4（tips层）   |  Number    |  1  |
+| type | 基本层类型 可传入的值有：1（页面层，子节点为dom）2（iframe层，子节点为地址） |  Number    |  1  |
 | title  | 标题 弹出框的标题 |  string  |   -  |
 | maxmin | 最大最小化 该参数值对该参数值对type:1 type:2 有效，默认显示最大小化按钮。 |Boolean|true|
 | width |窗体宽度 |string| 800px|
