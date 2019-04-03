@@ -34,7 +34,7 @@ export default class Layer extends Component {
         if (props.visible && this.rsNum === -1) {
             const {id} = this.state;
             let content = $('#' + id);
-            if (props.type=2){
+            if (props.type===2){
                 const {children, id} = this.state;
                 content = children;
             }
