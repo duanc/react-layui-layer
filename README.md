@@ -6,7 +6,7 @@
 ## 📦 安装
 
 ```bash
-npm install https://github.com/duanc/react-layer.git --save
+npm i react-layui-layer --save
 ```
 
 ## 🔨 示例
