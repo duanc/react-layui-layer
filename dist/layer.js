@@ -11180,7 +11180,7 @@ var _initialiseProps = function _initialiseProps() {
 
     this.changWindow = function (props) {
         // console.log(props);
-        if (props.visible && _this3.rsNum === -1 || props.multiple) {
+        if (props.visible && _this3.rsNum === -1) {
             var id = _this3.state.id;
 
             var content = $('#' + id);
@@ -11197,22 +11197,16 @@ var _initialiseProps = function _initialiseProps() {
                 area: [props.width || '800px', props.height || '500px'],
                 content: content,
                 cancel: function cancel(index) {
-
                     if (props.onCancel) {
                         props.onCancel();
                     }
-
-                    if (props.multiple) {
-                        return true;
-                    }
-
                     return false;
                 }
             });
             _this3.rsNum = rs;
         }
 
-        if (!props.visible && _this3.rsNum !== -1 && !props.multiple) {
+        if (!props.visible && _this3.rsNum !== -1) {
             _layer2.default.close(_this3.rsNum);
             _this3.rsNum = -1;
         }

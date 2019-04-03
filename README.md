@@ -23,7 +23,6 @@ import Layer from 'react-layer';
 | 参数        | 说明   |  类型  | 默认值  |
 | --------   | -----  | :----:  |:----:  |
 | visible | 是否显示窗体 | Boolean | false |
-| multiple | 是否支持一个标签打开多个窗口,multiple为true 关闭事件组件自动维护 | Boolean | false |
 | shade  | 遮罩 即弹层外区域。例如0.3为透明度0.3的黑色背景('#000')  |   number    |  0   |
 | type | 基本层类型 可传入的值有：0（信息框，默认）1（页面层）2（iframe层）3（加载层）4（tips层）   |  Number    |  1  |
 | title  | 标题 弹出框的标题 |  string  |   -  |
