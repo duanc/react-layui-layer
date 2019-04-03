@@ -44,6 +44,7 @@ export default class Layer extends Component {
                     if (props.onCancel) {
                         props.onCancel();
                     }
+                    return false;
                     // layer.close(index);
                     // this.rsNum = -1;
                 }

@@ -11194,6 +11194,7 @@ var _initialiseProps = function _initialiseProps() {
                     if (props.onCancel) {
                         props.onCancel();
                     }
+                    return false;
                     // layer.close(index);
                     // this.rsNum = -1;
                 }
