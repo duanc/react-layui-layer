@@ -12,11 +12,9 @@ export default class Layer extends Component {
             children: props.children,
         };
         this.rsNum = -1;
-
     }
 
     componentDidMount() {
-        console.log(layer)
         this.changWindow(this.props);
     }
 
@@ -46,6 +44,10 @@ export default class Layer extends Component {
                 title: props.title,
                 maxmin: true,
                 area: [props.width || '800px', props.height || '500px'],
+                zIndex: layer.zIndex,
+                success: function(layero){
+                    layer.setTop(layero);
+                },
                 content,
                 cancel: (index) => {
                     if (props.onCancel) {
@@ -61,15 +63,11 @@ export default class Layer extends Component {
             layer.close(this.rsNum);
             this.rsNum = -1;
         }
-
-        // console.log(this.rsNum);
     };
 
     render() {
         // const {children} = this.prop;
         const {children, id} = this.state;
-        // console.log(children1);
-        // console.log(children);
         return (
             <div id={id} style={{'display': 'none'}}>
                 {children}

@@ -11133,14 +11133,12 @@ var Layer = function (_Component) {
             children: props.children
         };
         _this.rsNum = -1;
-
         return _this;
     }
 
     _createClass(Layer, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
-            console.log(_layer2.default);
             this.changWindow(this.props);
         }
     }, {
@@ -11162,8 +11160,6 @@ var Layer = function (_Component) {
             var _state = this.state,
                 children = _state.children,
                 id = _state.id;
-            // console.log(children1);
-            // console.log(children);
 
             return _react2.default.createElement(
                 'div',
@@ -11197,6 +11193,10 @@ var _initialiseProps = function _initialiseProps() {
                 title: props.title,
                 maxmin: true,
                 area: [props.width || '800px', props.height || '500px'],
+                zIndex: _layer2.default.zIndex,
+                success: function success(layero) {
+                    _layer2.default.setTop(layero);
+                },
                 content: content,
                 cancel: function cancel(index) {
                     if (props.onCancel) {
@@ -11212,8 +11212,6 @@ var _initialiseProps = function _initialiseProps() {
             _layer2.default.close(_this3.rsNum);
             _this3.rsNum = -1;
         }
-
-        // console.log(this.rsNum);
     };
 };
 
