@@ -13,9 +13,34 @@ npm i react-layui-layer --save
 
 ```jsx
 import Layer from 'react-layui-layer';
-   <Layer visible={isShow} onCancel={this.onCancel}>
-            <span>测试数据</span>
-   </Layer>
+```
+```jsx
+showWindow = () => {
+     this.setState({
+         isShow: true
+     });
+
+ };
+onCancel = () => {
+     this.setState({
+         isShow: false
+     });
+
+ };
+```
+```jsx
+   render() {
+        const {isShow,isShow2,windowsArray} = this.state;
+        console.log(isShow2);
+        return (
+            <div className="App">
+                <button onClick={this.showWindow}>打开窗口</button>
+                <Layer visible={isShow} onCancel={this.onCancel}>
+                         <span>测试数据</span>
+                </Layer>
+             </div>
+        )
+   }
 ```
 
 ## 📚 文档
