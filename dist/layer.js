@@ -11133,7 +11133,7 @@ var Layer = function (_Component) {
             children: props.children
         };
         _this.rsNum = -1;
-        _this.changWindow(props);
+
         return _this;
     }
 
@@ -11141,6 +11141,7 @@ var Layer = function (_Component) {
         key: 'componentDidMount',
         value: function componentDidMount() {
             console.log(_layer2.default);
+            this.changWindow(this.props);
         }
     }, {
         key: 'componentWillReceiveProps',

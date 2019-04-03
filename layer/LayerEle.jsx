@@ -12,11 +12,12 @@ export default class Layer extends Component {
             children: props.children,
         };
         this.rsNum = -1;
-        this.changWindow(props);
+
     }
 
     componentDidMount() {
         console.log(layer)
+        this.changWindow(this.props);
     }
 
 
