@@ -11179,7 +11179,7 @@ var _initialiseProps = function _initialiseProps() {
     var _this3 = this;
 
     this.changWindow = function (props) {
-        console.log(props);
+        // console.log(props);
         if (props.visible && _this3.rsNum === -1) {
             var id = _this3.state.id;
 

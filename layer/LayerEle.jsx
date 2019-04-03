@@ -30,7 +30,7 @@ export default class Layer extends Component {
     }
 
     changWindow = (props) => {
-        console.log(props);
+        // console.log(props);
         if (props.visible && this.rsNum === -1) {
             const {id} = this.state;
             let content = $('#' + id);
