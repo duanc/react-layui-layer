@@ -12,7 +12,7 @@ npm i react-layui-layer --save
 ## 🔨 示例
 
 ```jsx
-import Layer from 'react-layer';
+import Layer from 'react-layui-layer';
    <Layer visible={isShow} onCancel={this.onCancel}>
             <span>测试数据</span>
    </Layer>
