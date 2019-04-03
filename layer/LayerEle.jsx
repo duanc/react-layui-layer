@@ -31,6 +31,7 @@ export default class Layer extends Component {
 
     changWindow = (props) => {
         console.log(props);
+        console.log(this.rsNum );
         if (props.visible && this.rsNum === -1) {
             const {id} = this.state;
             let content = $('#' + id);
@@ -39,6 +40,7 @@ export default class Layer extends Component {
                 content = children;
             }
             const rs = layer.open({
+                id:id,
                 shade: props.shade || 0,
                 type: props.type || 1,
                 title: props.title,

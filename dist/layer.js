@@ -11180,6 +11180,7 @@ var _initialiseProps = function _initialiseProps() {
 
     this.changWindow = function (props) {
         console.log(props);
+        console.log(_this3.rsNum);
         if (props.visible && _this3.rsNum === -1) {
             var id = _this3.state.id;
 
@@ -11190,6 +11191,7 @@ var _initialiseProps = function _initialiseProps() {
                 content = children;
             }
             var rs = _layer2.default.open({
+                id: id,
                 shade: props.shade || 0,
                 type: props.type || 1,
                 title: props.title,
