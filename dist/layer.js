@@ -11191,7 +11191,6 @@ var _initialiseProps = function _initialiseProps() {
                 content = children;
             }
             var rs = _layer2.default.open({
-                id: id,
                 shade: props.shade || 0,
                 type: props.type || 1,
                 title: props.title,

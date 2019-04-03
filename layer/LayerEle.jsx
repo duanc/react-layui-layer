@@ -40,7 +40,6 @@ export default class Layer extends Component {
                 content = children;
             }
             const rs = layer.open({
-                id:id,
                 shade: props.shade || 0,
                 type: props.type || 1,
                 title: props.title,
