@@ -11140,7 +11140,7 @@ var Layer = function (_Component) {
     _createClass(Layer, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
-            // console.log(layer)
+            console.log(_layer2.default);
         }
     }, {
         key: 'componentWillReceiveProps',
@@ -11179,7 +11179,7 @@ var _initialiseProps = function _initialiseProps() {
     var _this3 = this;
 
     this.changWindow = function (props) {
-        // console.log(props);
+        console.log(props);
         if (props.visible && _this3.rsNum === -1) {
             var id = _this3.state.id;
 
