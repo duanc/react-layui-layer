@@ -1,6 +1,6 @@
 {
   "name": "react-layui-layer",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "",
   "main": "index.js",
   "dependencies": {
@@ -23,7 +23,8 @@
     "type": "git",
     "url": "git+https://github.com/duanc/react-layer.git"
   },
-  "author": "",
+  "author": "duanc",
+  "keywords":["react","layui","layer","react-layer","react-layui-layer","window","弹出层","窗口"],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/duanc/react-layer/issues"
