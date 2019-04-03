@@ -1,2 +1,2 @@
-import hello from './dist/layer';
-export default hello
+import Layer from './dist/layer';
+export default Layer

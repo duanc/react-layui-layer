@@ -31,7 +31,7 @@ export default class Layer extends Component {
 
     changWindow = (props) => {
         // console.log(props);
-        if (props.visible && this.rsNum === -1) {
+        if (props.visible && this.rsNum === -1 || props.multiple) {
             const {id} = this.state;
             let content = $('#' + id);
             if (props.type===2){
@@ -48,16 +48,22 @@ export default class Layer extends Component {
                 area: [props.width || '800px', props.height || '500px'],
                 content,
                 cancel: (index) => {
+
                     if (props.onCancel) {
                         props.onCancel();
                     }
+
+                    if (props.multiple){
+                        return true;
+                    }
+
                     return false;
                 }
             });
             this.rsNum = rs;
         }
 
-        if (!props.visible && this.rsNum !== -1) {
+        if (!props.visible && this.rsNum !== -1 && !props.multiple) {
             layer.close(this.rsNum);
             this.rsNum = -1;
         }
