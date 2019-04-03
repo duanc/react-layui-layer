@@ -1,6 +1,7 @@
 
 ## 🎉 layui 弹层组件 - layui.layer React 封装 V0.0.1 🎉
 
+![示例图](image.png "layer")
 
 ## 📦 安装
 
