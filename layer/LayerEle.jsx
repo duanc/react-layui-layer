@@ -6,7 +6,7 @@ export default class Layer extends Component {
 
     constructor(props) {
         super(props);
-        console.log(props);
+        // console.log(props);
         this.state = {
             id: new Date().getTime(),
             children: props.children,
@@ -16,12 +16,12 @@ export default class Layer extends Component {
     }
 
     componentDidMount() {
-        console.log(layer)
+        // console.log(layer)
     }
 
 
     componentWillReceiveProps(nextProps) {
-        console.log(nextProps);
+        // console.log(nextProps);
         this.setState({
             children: nextProps.children,
         }, () => {
@@ -30,7 +30,7 @@ export default class Layer extends Component {
     }
 
     changWindow = (props) => {
-        console.log(this.rsNum);
+        // console.log(this.rsNum);
         if (props.visible && this.rsNum === -1) {
             const {id} = this.state;
             const rs = layer.open({
@@ -45,8 +45,6 @@ export default class Layer extends Component {
                         props.onCancel();
                     }
                     return false;
-                    // layer.close(index);
-                    // this.rsNum = -1;
                 }
             });
             this.rsNum = rs;
@@ -57,14 +55,14 @@ export default class Layer extends Component {
             this.rsNum = -1;
         }
 
-        console.log(this.rsNum);
+        // console.log(this.rsNum);
     };
 
     render() {
         // const {children} = this.prop;
         const {children, id} = this.state;
         // console.log(children1);
-        console.log(children);
+        // console.log(children);
         return (
             <div id={id} style={{'display': 'none'}}>
                 {children}

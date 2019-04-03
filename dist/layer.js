@@ -11123,11 +11123,11 @@ var Layer = function (_Component) {
     function Layer(props) {
         _classCallCheck(this, Layer);
 
+        // console.log(props);
         var _this = _possibleConstructorReturn(this, (Layer.__proto__ || Object.getPrototypeOf(Layer)).call(this, props));
 
         _initialiseProps.call(_this);
 
-        console.log(props);
         _this.state = {
             id: new Date().getTime(),
             children: props.children
@@ -11140,14 +11140,14 @@ var Layer = function (_Component) {
     _createClass(Layer, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
-            console.log(_layer2.default);
+            // console.log(layer)
         }
     }, {
         key: 'componentWillReceiveProps',
         value: function componentWillReceiveProps(nextProps) {
             var _this2 = this;
 
-            console.log(nextProps);
+            // console.log(nextProps);
             this.setState({
                 children: nextProps.children
             }, function () {
@@ -11162,8 +11162,8 @@ var Layer = function (_Component) {
                 children = _state.children,
                 id = _state.id;
             // console.log(children1);
+            // console.log(children);
 
-            console.log(children);
             return _react2.default.createElement(
                 'div',
                 { id: id, style: { 'display': 'none' } },
@@ -11179,7 +11179,7 @@ var _initialiseProps = function _initialiseProps() {
     var _this3 = this;
 
     this.changWindow = function (props) {
-        console.log(_this3.rsNum);
+        // console.log(this.rsNum);
         if (props.visible && _this3.rsNum === -1) {
             var id = _this3.state.id;
 
@@ -11195,8 +11195,6 @@ var _initialiseProps = function _initialiseProps() {
                         props.onCancel();
                     }
                     return false;
-                    // layer.close(index);
-                    // this.rsNum = -1;
                 }
             });
             _this3.rsNum = rs;
@@ -11207,7 +11205,7 @@ var _initialiseProps = function _initialiseProps() {
             _this3.rsNum = -1;
         }
 
-        console.log(_this3.rsNum);
+        // console.log(this.rsNum);
     };
 };
 
