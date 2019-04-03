@@ -11183,13 +11183,21 @@ var _initialiseProps = function _initialiseProps() {
         if (props.visible && _this3.rsNum === -1) {
             var id = _this3.state.id;
 
+            var content = $('#' + id);
+            if (props.type = 2) {
+                var _state2 = _this3.state,
+                    children = _state2.children,
+                    _id = _state2.id;
+
+                content = children;
+            }
             var rs = _layer2.default.open({
                 shade: props.shade || 0,
                 type: props.type || 1,
                 title: props.title,
                 maxmin: true,
                 area: [props.width || '800px', props.height || '500px'],
-                content: $('#' + id),
+                content: content,
                 cancel: function cancel(index) {
                     if (props.onCancel) {
                         props.onCancel();

@@ -33,13 +33,18 @@ export default class Layer extends Component {
         // console.log(this.rsNum);
         if (props.visible && this.rsNum === -1) {
             const {id} = this.state;
+            let content = $('#' + id);
+            if (props.type=2){
+                const {children, id} = this.state;
+                content = children;
+            }
             const rs = layer.open({
                 shade: props.shade || 0,
                 type: props.type || 1,
                 title: props.title,
                 maxmin: true,
                 area: [props.width || '800px', props.height || '500px'],
-                content: $('#' + id),
+                content,
                 cancel: (index) => {
                     if (props.onCancel) {
                         props.onCancel();
