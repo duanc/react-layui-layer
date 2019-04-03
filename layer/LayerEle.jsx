@@ -29,12 +29,15 @@ export default class Layer extends Component {
     }
 
     changWindow = (props) => {
-        console.log(props);
-        console.log(this.rsNum );
+        if (props.debug) {
+            console.log(props);
+            console.log(this.rsNum);
+        }
+
         if (props.visible && this.rsNum === -1) {
             const {id} = this.state;
             let content = $('#' + id);
-            if (props.type===2){
+            if (props.type === 2) {
                 const {children} = this.state;
                 content = children;
             }
@@ -45,7 +48,7 @@ export default class Layer extends Component {
                 maxmin: true,
                 area: [props.width || '800px', props.height || '500px'],
                 zIndex: layer.zIndex,
-                success: function(layero){
+                success: function (layero) {
                     layer.setTop(layero);
                 },
                 content,
