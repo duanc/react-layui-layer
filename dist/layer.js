@@ -11127,14 +11127,12 @@ var Layer = function (_Component) {
 
         _initialiseProps.call(_this);
 
-        console.log('初始化构造器');
         console.log(props);
         _this.state = {
             id: new Date().getTime(),
             children: props.children
         };
         _this.rsNum = -1;
-        _this.isShow = false;
         _this.changWindow(props);
         return _this;
     }
@@ -11142,7 +11140,6 @@ var Layer = function (_Component) {
     _createClass(Layer, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
-            console.log('執行了Layer');
             console.log(_layer2.default);
         }
     }, {
@@ -11159,21 +11156,6 @@ var Layer = function (_Component) {
         }
     }, {
         key: 'render',
-
-
-        // showWindow = () => {
-        //     layer.open({
-        //         type: 2,
-        //         title: '欢迎页',
-        //         maxmin: true,
-        //         area: ['800px', '500px'],
-        //         content: 'http://layer.layui.com/test/welcome.html',
-        //         end: function () {
-        //             // layer.tips('Hi', '#about', {tips: 1})
-        //         }
-        //     });
-        // };
-
         value: function render() {
             // const {children} = this.prop;
             var _state = this.state,
@@ -11198,7 +11180,7 @@ var _initialiseProps = function _initialiseProps() {
 
     this.changWindow = function (props) {
         console.log(_this3.rsNum);
-        if (props.visible && !_this3.isShow) {
+        if (props.visible && _this3.rsNum === -1) {
             var id = _this3.state.id;
 
             var rs = _layer2.default.open({
@@ -11209,17 +11191,19 @@ var _initialiseProps = function _initialiseProps() {
                 area: [props.width || '800px', props.height || '500px'],
                 content: $('#' + id),
                 cancel: function cancel(index) {
-                    _layer2.default.close(index);
-                    _this3.isShow = false;
+                    if (props.onCancel) {
+                        props.onCancel();
+                    }
+                    // layer.close(index);
+                    // this.rsNum = -1;
                 }
             });
             _this3.rsNum = rs;
-            _this3.isShow = true;
         }
 
-        if (!props.visible && _this3.isShow) {
+        if (!props.visible && _this3.rsNum !== -1) {
             _layer2.default.close(_this3.rsNum);
-            _this3.isShow = false;
+            _this3.rsNum = -1;
         }
 
         console.log(_this3.rsNum);

@@ -4,22 +4,18 @@ import layer from './layer';
 
 export default class Layer extends Component {
 
-
     constructor(props) {
         super(props);
-        console.log('初始化构造器');
         console.log(props);
         this.state = {
             id: new Date().getTime(),
             children: props.children,
         };
         this.rsNum = -1;
-        this.isShow = false;
         this.changWindow(props);
     }
 
     componentDidMount() {
-        console.log('執行了Layer');
         console.log(layer)
     }
 
@@ -31,13 +27,11 @@ export default class Layer extends Component {
         }, () => {
             this.changWindow(nextProps);
         });
-
-
     }
 
     changWindow = (props) => {
         console.log(this.rsNum);
-        if (props.visible && !this.isShow) {
+        if (props.visible && this.rsNum === -1) {
             const {id} = this.state;
             const rs = layer.open({
                 shade: props.shade || 0,
@@ -46,35 +40,24 @@ export default class Layer extends Component {
                 maxmin: true,
                 area: [props.width || '800px', props.height || '500px'],
                 content: $('#' + id),
-                cancel: (index)=>{
-                    layer.close(index);
-                    this.isShow = false
+                cancel: (index) => {
+                    if (props.onCancel) {
+                        props.onCancel();
+                    }
+                    // layer.close(index);
+                    // this.rsNum = -1;
                 }
             });
             this.rsNum = rs;
-            this.isShow = true;
         }
 
-        if (!props.visible && this.isShow) {
-            layer.close(  this.rsNum);
-            this.isShow = false
+        if (!props.visible && this.rsNum !== -1) {
+            layer.close(this.rsNum);
+            this.rsNum = -1;
         }
 
         console.log(this.rsNum);
     };
-
-    // showWindow = () => {
-    //     layer.open({
-    //         type: 2,
-    //         title: '欢迎页',
-    //         maxmin: true,
-    //         area: ['800px', '500px'],
-    //         content: 'http://layer.layui.com/test/welcome.html',
-    //         end: function () {
-    //             // layer.tips('Hi', '#about', {tips: 1})
-    //         }
-    //     });
-    // };
 
     render() {
         // const {children} = this.prop;
