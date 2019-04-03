@@ -35,8 +35,10 @@ export default class Layer extends Component {
             const {id} = this.state;
             let content = $('#' + id);
             if (props.type===2){
-                const {children, id} = this.state;
+
+                const {children} = this.state;
                 content = children;
+
             }
             const rs = layer.open({
                 shade: props.shade || 0,

@@ -11184,10 +11184,8 @@ var _initialiseProps = function _initialiseProps() {
             var id = _this3.state.id;
 
             var content = $('#' + id);
-            if (props.type = 2) {
-                var _state2 = _this3.state,
-                    children = _state2.children,
-                    _id = _state2.id;
+            if (props.type === 2) {
+                var children = _this3.state.children;
 
                 content = children;
             }
