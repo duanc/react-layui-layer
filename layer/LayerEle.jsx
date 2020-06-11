@@ -6,7 +6,7 @@ export default class Layer extends Component {
 
     constructor(props) {
         super(props);
-        // console.log(props);
+
         this.state = {
             id: new Date().getTime(),
             children: props.children,
@@ -20,7 +20,7 @@ export default class Layer extends Component {
 
 
     componentWillReceiveProps(nextProps) {
-        // console.log(nextProps);
+
         this.setState({
             children: nextProps.children,
         }, () => {
@@ -54,7 +54,7 @@ export default class Layer extends Component {
                 content,
                 cancel: (index) => {
                     if (props.onCancel) {
-                        props.onCancel();
+                        props.onCancel(index);
                     }
                     return false;
                 }
@@ -69,7 +69,6 @@ export default class Layer extends Component {
     };
 
     render() {
-        // const {children} = this.prop;
         const {children, id} = this.state;
         return (
             <div id={id} style={{'display': 'none'}}>
