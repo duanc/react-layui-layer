@@ -11123,7 +11123,6 @@ var Layer = function (_Component) {
     function Layer(props) {
         _classCallCheck(this, Layer);
 
-        // console.log(props);
         var _this = _possibleConstructorReturn(this, (Layer.__proto__ || Object.getPrototypeOf(Layer)).call(this, props));
 
         _initialiseProps.call(_this);
@@ -11146,7 +11145,6 @@ var Layer = function (_Component) {
         value: function componentWillReceiveProps(nextProps) {
             var _this2 = this;
 
-            // console.log(nextProps);
             this.setState({
                 children: nextProps.children
             }, function () {
@@ -11156,7 +11154,6 @@ var Layer = function (_Component) {
     }, {
         key: 'render',
         value: function render() {
-            // const {children} = this.prop;
             var _state = this.state,
                 children = _state.children,
                 id = _state.id;
@@ -11195,6 +11192,7 @@ var _initialiseProps = function _initialiseProps() {
                 type: props.type || 1,
                 title: props.title,
                 maxmin: true,
+                anim: 3,
                 area: [props.width || '800px', props.height || '500px'],
                 zIndex: _layer2.default.zIndex,
                 success: function success(layero) {
@@ -11203,7 +11201,7 @@ var _initialiseProps = function _initialiseProps() {
                 content: content,
                 cancel: function cancel(index) {
                     if (props.onCancel) {
-                        props.onCancel();
+                        props.onCancel(index);
                     }
                     return false;
                 }

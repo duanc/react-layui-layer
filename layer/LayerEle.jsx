@@ -46,6 +46,7 @@ export default class Layer extends Component {
                 type: props.type || 1,
                 title: props.title,
                 maxmin: true,
+                anim:3,
                 area: [props.width || '800px', props.height || '500px'],
                 zIndex: layer.zIndex,
                 success: function (layero) {
